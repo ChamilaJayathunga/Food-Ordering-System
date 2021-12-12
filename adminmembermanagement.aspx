@@ -1,0 +1,193 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="adminmembermanagement.aspx.cs" Inherits="FoodShop.adminmembermanagement" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+
+
+          //$(document).ready(function () {
+              //$('.table').DataTable();
+         // });
+      
+          $(".table").prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
+          //$('.table1').DataTable();
+      });
+
+   </script>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+      <!-- Start header -->
+	<div class="all-page-title page-breadcrumb">
+
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+
+
+
+    <div class="container-fluid">
+      <div class="row">
+         <div class="col-md-12">
+            <div class="card" style="font-family: 'comic Sans MS'; background-color: rgba(128, 128, 128, 0.25); color: #CCCCCC;">
+               <div class="card-body">
+                  <div class="row">
+                     <div class="col">
+                        <center>
+                           <h4 style="color: #CCCCCC">Member Details</h4>
+                        </center>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col">
+                        <center>
+                           <img width="150px" src="images/generaluser.png" />
+                        </center>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col">
+                        <hr>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-md-3">
+                        <label>Member ID</label>
+                        <div class="form-group">
+                           <div class="input-group">
+                              <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="Member ID"></asp:TextBox>
+                              <asp:LinkButton class="btn btn-primary" ID="LinkButton4" runat="server" Text="Go" OnClick="LinkButton4_Click" /><i class="fasfa-check-circle"></i></asp:LinkButton>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <label>Full Name</label>
+                        <div class="form-group">
+                           <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Full Name" ReadOnly="True"></asp:TextBox>
+                        </div>
+                     </div>
+                     <div class="col-md-5">
+                        <label>Account Status</label>
+                        <div class="form-group">
+                           <div class="input-group">
+                              <asp:TextBox CssClass="form-control mr-1" ID="TextBox7" runat="server" placeholder="Account Status" ReadOnly="True"></asp:TextBox>
+                              <asp:LinkButton class="btn btn-success mr-1" ID="LinkButton1" runat="server" Text="S" OnClick="LinkButton1_Click"><i class="fas fa-check-circle"></i></asp:LinkButton>
+                              <asp:LinkButton class="btn btn-warning mr-1" ID="LinkButton2" runat="server" Text="P" OnClick="LinkButton2_Click"><i class="far fa-pause-circle"></i></asp:LinkButton>
+                              <asp:LinkButton class="btn btn-danger mr-1" ID="LinkButton3" runat="server" Text="D" OnClick="LinkButton3_Click"><i class="fas fa-times-circle"></i></asp:LinkButton>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                   
+                  <div class="row">
+                     <div class="col-md-3">
+                        <label>DOB</label>
+                        <div class="form-group">
+                           <asp:TextBox CssClass="form-control" ID="TextBox8" runat="server" placeholder="DOB" ReadOnly="True"></asp:TextBox>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <label>Contact No</label>
+                        <div class="form-group">
+                           <asp:TextBox CssClass="form-control" ID="TextBox3" runat="server" placeholder="Contact No" ReadOnly="True"></asp:TextBox>
+                        </div>
+                     </div>
+                     <div class="col-md-5">
+                        <label>Email ID</label>
+                        <div class="form-group">
+                           <asp:TextBox CssClass="form-control" ID="TextBox4" runat="server" placeholder="Email ID" ReadOnly="True"></asp:TextBox>
+                        </div>
+                     </div>
+                  </div>
+                   
+                  <div class="row">
+                     <div class="col-md-4">
+                        <label>State</label>
+                        <div class="form-group">
+                           <asp:TextBox CssClass="form-control" ID="TextBox9" runat="server" placeholder="State" ReadOnly="True"></asp:TextBox>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <label>City</label>
+                        <div class="form-group">
+                           <asp:TextBox CssClass="form-control" ID="TextBox10" runat="server" placeholder="City" ReadOnly="True"></asp:TextBox>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <label>Pin Code</label>
+                        <div class="form-group">
+                           <asp:TextBox CssClass="form-control" ID="TextBox11" runat="server" placeholder="Pin Code" ReadOnly="True"></asp:TextBox>
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="row">
+                     <div class="col-12">
+                        <label>Full Postal Address</label>
+                        <div class="form-group">
+                           <asp:TextBox CssClass="form-control" ID="TextBox6" runat="server" placeholder="Full Postal Address" TextMode="MultiLine" Rows="2" ReadOnly="True"></asp:TextBox>
+                        </div>
+                     </div>
+                  </div>
+                   
+                  <div class="row">
+                     <div class="col-8 mx-auto">
+                         <center>
+                        <asp:Button ID="Button2" class="btn btn-lg btn-block btn-danger" runat="server" Text="Delete User Permanently" OnClick="Button2_Click" />
+                        </center>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <a href="homepage.aspx" style="color: #CCCCCC"><< Back to Home</a><br>
+            <br>
+         </div>
+
+         
+         <div class="col-md-12">
+            <div class="card" style="font-family: 'comic Sans MS'; background-color: rgba(128, 128, 128, 0.25); color: #CCCCCC;">
+               <div class="card-body">
+                  <div class="row">
+                     <div class="col">
+                        <center>
+                           <h4 style="color: #CCCCCC">Member List</h4>
+                        </center>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col">
+                        <hr>
+                     </div>
+                  </div>
+                  <div class="row">
+                      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:foodshopDBConnectionString2 %>" SelectCommand="SELECT * FROM [member_master_table]"></asp:SqlDataSource>
+                     <div class="col">
+                        <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="false" DataKeyNames="member_id" DataSourceID="SqlDataSource1" Width="1039px">
+                            <Columns>
+                                <asp:BoundField DataField="member_id" HeaderText="member_id" ReadOnly="True" SortExpression="member_id" />
+                                <asp:BoundField DataField="full_name" HeaderText="full_name" SortExpression="full_name" />
+                                <asp:BoundField DataField="full_address" HeaderText="full_address" SortExpression="full_address" />
+                                <asp:BoundField DataField="dob" HeaderText="dob" SortExpression="dob" />
+                                <asp:BoundField DataField="city" HeaderText="city" SortExpression="city" />
+                                <asp:BoundField DataField="phone_number" HeaderText="phone_number" SortExpression="phone_number" />
+                                <asp:BoundField DataField="password" HeaderText="password" SortExpression="password" />
+                                <asp:BoundField DataField="account_status" HeaderText="account_status" SortExpression="account_status" />
+                            </Columns>
+                         </asp:GridView>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+ 
+                       
+                    </div>
+			</div>
+		</div>
+	</div>
+	<!-- End header -->
+
+</asp:Content>
